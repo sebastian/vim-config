@@ -82,3 +82,8 @@ map <leader>tm :tabmove
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 nnoremap <CR> :noh<CR><CR>
+
+" Google specific
+syntax on 
+source /usr/share/vim/google/google.vim
+
