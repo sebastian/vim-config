@@ -161,3 +161,20 @@ nnoremap <leader>ft Vatzf
 
 " To sort selected properties
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+" From David Evans
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+
+  au BufNewFile,BufRead *.txt setlocal tw=72
+  au BufNewFile,BufRead *.txt setlocal spell
+
+  au BufNewFile,BufRead *.tex setlocal tw=72
+  au BufNewFile,BufRead *.tex setlocal spell
+  " because I use latex-suite
+  au BufNewFile,BufRead *.tex setlocal foldcolumn=5
+
+  au BufNewFile,BufRead *.rb setlocal ts=4 sw=4
+  au BufNewFile,BufRead *.cpp setlocal ts=4 sw=4
+  au BufNewFile,BufRead *.c setlocal ts=4 sw=4
+endif
