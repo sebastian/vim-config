@@ -178,3 +178,5 @@ if !exists("autocommands_loaded")
   au BufNewFile,BufRead *.cpp setlocal ts=4 sw=4
   au BufNewFile,BufRead *.c setlocal ts=4 sw=4
 endif
+
+imap jj <Esc>
