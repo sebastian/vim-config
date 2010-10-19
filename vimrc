@@ -91,13 +91,11 @@ source /usr/share/vim/google/google.vim
 
 " The following are taken from the blog post of Steve Losh
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
-set noncompatible
 set modelines=0
 set encoding=utf-8
 set autoindent
 set cursorline
 set ttyfast
-set undofile
 
 let mapleader = ","
 
