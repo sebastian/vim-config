@@ -7,6 +7,7 @@ silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#pathogen#helptags()
 
 syntax enable                     " Turn on syntax highlighting.
+syntax on 
 filetype plugin indent on         " Turn on file type detection.
 
 
@@ -85,9 +86,6 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 nnoremap <CR> :noh<CR><CR>
 
-" Google specific
-syntax on 
-source /usr/share/vim/google/google.vim
 
 " The following are taken from the blog post of Steve Losh
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
@@ -178,3 +176,20 @@ if !exists("autocommands_loaded")
 endif
 
 imap jj <Esc>
+imap kk <Esc>
+
+" Toggling between showing an hiding invisible characters
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+"Invisible character colors
+highlight NonText guifg=#A9A9A9
+highlight SpecialKey guifg=#A9A9A9
+
+:set formatprg=par\ -rjeq
+
+" Toggle spell checking on and off with `,s`
+nmap <silent> <leader>s :set spell!<CR>
+" Set region to British English
+set spelllang=en_gb
+" Remember that I can use z= to get suggestions
