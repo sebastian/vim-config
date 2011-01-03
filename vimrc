@@ -186,10 +186,16 @@ set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#A9A9A9
 highlight SpecialKey guifg=#A9A9A9
 
-:set formatprg=par\ -rjeq
+set formatprg=par\ -rjeq
 
 " Toggle spell checking on and off with `,s`
 nmap <silent> <leader>s :set spell!<CR>
 " Set region to British English
 set spelllang=en_gb
 " Remember that I can use z= to get suggestions
+
+" Increase the default font size
+" set guifont="Menlo\ 13"
+
+" My own little refactoring mapping for inlining a varialbe
+nnoremap <leader>inl ^*``f=wdt,``hpldw``dd
