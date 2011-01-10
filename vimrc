@@ -53,9 +53,6 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Or use vividchalk
-"# colorscheme default
-
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -67,19 +64,9 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
-
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
 " Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal foldmethod=syntax
+autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
@@ -140,10 +127,6 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
 " Save on lost focus
 au FocusLost * :wa
 
@@ -176,7 +159,6 @@ if !exists("autocommands_loaded")
 endif
 
 imap jj <Esc>
-imap kk <Esc>
 
 " Toggling between showing an hiding invisible characters
 nmap <leader>l :set list!<CR>
@@ -198,4 +180,6 @@ set spelllang=en_gb
 " set guifont="Menlo\ 13"
 
 " My own little refactoring mapping for inlining a varialbe
-nnoremap <leader>inl ^*``f=wdt,``hpldw``dd
+nnoremap <leader>inl ^mq*``f=wv$hh"wy``dw"wPV=`qdd
+
+colorscheme eclm_wombat
