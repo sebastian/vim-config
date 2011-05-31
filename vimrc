@@ -65,7 +65,7 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 " Automatic fold settings for specific files. Uncomment to use.
-autocmd FileType ruby setlocal foldmethod=syntax
+autocmd FileType ruby setlocal foldmethod=syntax shiftwidth=2 tabstop=2
 autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
@@ -138,9 +138,6 @@ nnoremap <leader>a :Ack
 " To fold tags (for html)
 nnoremap <leader>ft Vatzf
 
-" To sort selected properties
-nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
-
 " From David Evans
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
@@ -153,7 +150,8 @@ if !exists("autocommands_loaded")
   " because I use latex-suite
   au BufNewFile,BufRead *.tex setlocal foldcolumn=5
 
-  au BufNewFile,BufRead *.rb setlocal ts=4 sw=4
+  au BufNewFile,BufRead *.rb setlocal ts=2 sw=2
+  au BufNewFile,BufRead *.erl setlocal ts=2 sw=2
   au BufNewFile,BufRead *.cpp setlocal ts=4 sw=4
   au BufNewFile,BufRead *.c setlocal ts=4 sw=4
 endif
@@ -182,4 +180,9 @@ set spelllang=en_gb
 " My own little refactoring mapping for inlining a varialbe
 nnoremap <leader>inl ^mq*``f=wv$hh"wy``dw"wPV=`qdd
 
-colorscheme eclm_wombat
+colorscheme topfunky-light
+" colorscheme eclm_wombat
+
+let g:erl_author="Sebastian Probst Eide"
+let g:erl_company="Kleio"
+
