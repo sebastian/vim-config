@@ -55,14 +55,14 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
+map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>
 map <leader>tn :tabnext<cr>
 map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
+map <leader>tm :tabmove 
 
 " Automatic fold settings for specific files. Uncomment to use.
 autocmd FileType ruby setlocal foldmethod=syntax shiftwidth=2 tabstop=2
@@ -86,19 +86,14 @@ let mapleader = ","
 
 nnoremap / /\v
 vnoremap / /\v
-set ignorecase
-set smartcase
 set gdefault
-set incsearch
 set showmatch
-set hlsearch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
 set textwidth=79
 set formatoptions=qrn1
-set wrap
 set linebreak
 set nolist
 
@@ -113,8 +108,6 @@ nmap <D-k> gk
 nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^
-
-set listchars=tab:▸\ ,eol:¬
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -131,7 +124,7 @@ nnoremap k gk
 au FocusLost * :wa
 
 " Strip whitespace in current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>W :%s/\s\+$//e<cr>:let @/=''<CR>
 
 nnoremap <leader>a :Ack
 
@@ -162,6 +155,10 @@ imap jj <Esc>
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+set listchars+=trail:·
+set listchars+=nbsp:—
+set listchars+=,extends:#,precedes:#
+
 "Invisible character colors
 highlight NonText guifg=#A9A9A9
 highlight SpecialKey guifg=#A9A9A9
