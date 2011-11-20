@@ -177,8 +177,15 @@ set spelllang=en_gb
 " My own little refactoring mapping for inlining a varialbe
 nnoremap <leader>inl ^mq*``f=wv$hh"wy``dw"wPV=`qdd
 
-colorscheme topfunky-light
+" colorscheme topfunky-light
 " colorscheme eclm_wombat
+" Solazired coluor scheme
+colorscheme solarized
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
 let g:erl_author="Sebastian Probst Eide"
 let g:erl_company="Kleio"
