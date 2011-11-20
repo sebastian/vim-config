@@ -157,7 +157,7 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:·
 set listchars+=nbsp:—
-" set listchars+=,extends:#,precedes:#
+set listchars+=,extends:#,precedes:#
 
 "Invisible character colors
 highlight NonText guifg=#A9A9A9
