@@ -182,4 +182,3 @@ colorscheme topfunky-light
 
 let g:erl_author="Sebastian Probst Eide"
 let g:erl_company="Kleio"
-
