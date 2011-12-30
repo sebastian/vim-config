@@ -2,7 +2,7 @@ Quick install:
 
 Clone the git repository:
 
-    git clone git@github.com:sebastian/vim-config.git ~/.vim
+    git clone git://github.com/sebastian/vim-config.git ~/.vim
 
 Now get the bundles:
 
