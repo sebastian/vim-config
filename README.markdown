@@ -1,5 +1,19 @@
-Quickly install with:
+Quick install:
 
-    git clone git://github.com/msanders/snipmate.vim.git
-	cd snipmate.vim
-	cp -R * ~/.vim
+Clone the git repository:
+
+    git clone git@github.com:sebastian/vim-config.git ~/.vim
+
+Now get the bundles:
+
+    cd ~/.vim
+    git submodule init
+    git submodule update
+
+Setup your .vimrc and .gvimrc
+
+    cd ~/
+    ln -s .vim/vimrc .vimrc
+    ln -s .vim/gvimrc .gvimrc
+
+That should be it.
