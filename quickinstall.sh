@@ -40,3 +40,4 @@ git submodule update;
 echo "*** Creating ~/.vimrc and ~/.gvimrc ..."
 ln -s .vim/vimrc .vimrc;
 ln -s .vim/gvimrc .gvimrc;
+echo "*** Done!"
