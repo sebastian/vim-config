@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function does_folder_exist () {
+does_folder_exist() {
   if [ -d $HOME/$1 ]
   then
     echo "**************************"
@@ -10,13 +10,13 @@ function does_folder_exist () {
     exit 1
   fi
 }
-function file_warning () {
+file_warning() {
   echo "**************************"
   echo "You already have a ~/$1 file, please back it up."
   echo "**************************"
   exit 1
 }
-function does_file_exist () {
+does_file_exist() {
   if [ -e $HOME/$1 ] 
   then 
     file_warning $1 
