@@ -1,4 +1,8 @@
-Quick install:
+Super quick install:
+
+    curl https://raw.github.com/sebastian/vim-config/master/quickinstall.sh | sh
+
+Somewhat slower install:
 
 Clone the git repository:
 
