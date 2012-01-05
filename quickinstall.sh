@@ -40,12 +40,17 @@ echo "*** Initializing submodules ..."
 git submodule init;
 git submodule update;
 echo "*** Creating ~/.vimrc and ~/.gvimrc ..."
-ln -s .vim/vimrc .vimrc;
-ln -s .vim/gvimrc .gvimrc;
+ln -s ~/.vim/vimrc ~/.vimrc;
+ln -s ~/.vim/gvimrc ~/.gvimrc;
+
+# Go back to the user ran this script from
 cd $start_dir
+
+# Print out some happy success messages
 echo "*** Done!"
 echo "*** Summary:"
 echo "*** cloned git reppository to ~/.vim"
 echo "*** loaded all dependencies"
 echo "*** created ~/.vimrc and ~/.gvimrc files"
+echo "*** Have a great day!"
 
