@@ -31,6 +31,8 @@ does_folder_exist ".vim"
 does_file_exist ".vimrc"
 does_file_exist ".gvimrc"
 
+start_dir = pwd
+
 echo "*** Cloning repository into ~/.vim ..."
 git clone git://github.com/sebastian/vim-config.git ~/.vim;
 cd ~/.vim;
@@ -40,4 +42,10 @@ git submodule update;
 echo "*** Creating ~/.vimrc and ~/.gvimrc ..."
 ln -s .vim/vimrc .vimrc;
 ln -s .vim/gvimrc .gvimrc;
+cd $start_dir
 echo "*** Done!"
+echo "*** Summary:"
+echo "*** cloned git reppository to ~/.vim"
+echo "*** loaded all dependencies"
+echo "*** created ~/.vimrc and ~/.gvimrc files"
+
