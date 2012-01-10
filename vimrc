@@ -189,3 +189,10 @@ endif
 
 let g:erl_author="Sebastian Probst Eide"
 let g:erl_company="Kleio"
+
+" Changes for developing arduino projects
+autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
+modelines
+" Add the following to the bottom of arduino files
+" // vim:ft=arduino
+au! BufRead,BufNewFile *.pde setfiletype arduino
