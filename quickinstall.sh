@@ -47,10 +47,15 @@ ln -s ~/.vim/gvimrc ~/.gvimrc;
 cd $start_dir
 
 # Print out some happy success messages
-echo "*** Done!"
-echo "*** Summary:"
-echo "*** cloned git reppository to ~/.vim"
-echo "*** loaded all dependencies"
-echo "*** created ~/.vimrc and ~/.gvimrc files"
-echo "*** Have a great day!"
-
+echo ""
+echo ""
+echo "*********************************************"
+echo "*** Done!                                   *"
+echo "*** Summary:                                *"
+echo "*** cloned git reppository to ~/.vim        *"
+echo "*** loaded all dependencies                 *"
+echo "*** created ~/.vimrc and ~/.gvimrc files    *"
+echo "*** Have a great day!                       *"
+echo "*********************************************"
+echo ""
+echo ""
