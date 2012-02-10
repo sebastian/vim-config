@@ -157,7 +157,7 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 set listchars+=trail:·
 set listchars+=nbsp:—
-set listchars+=,extends:#,precedes:#
+" set listchars+=,extends:#,precedes:#
 
 "Invisible character colors
 highlight NonText guifg=#A9A9A9
@@ -168,7 +168,8 @@ set formatprg=par\ -rjeq
 " Toggle spell checking on and off with `,s`
 nmap <silent> <leader>s :set spell!<CR>
 " Set region to British English
-set spelllang=en_gb
+" set spelllang=en_gb
+set spelllang=es
 " Remember that I can use z= to get suggestions
 
 " Increase the default font size
@@ -191,8 +192,20 @@ let g:erl_author="Sebastian Probst Eide"
 let g:erl_company="Kleio"
 
 " Changes for developing arduino projects
-autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
-modelines
+autocmd Filetype arduino set errorformat^=\%-G%.%#/Applications/Arduino.app/%.%#
+" modelines
 " Add the following to the bottom of arduino files
 " // vim:ft=arduino
-au! BufRead,BufNewFile *.pde setfiletype arduino
+au! BufRead,BufNewFile *.ino setfiletype arduino
+
+" Objective-C key bindings
+" Alloc init autorelease
+nnoremap <leader>aia I[[[<esc>A alloc] init] autorelease];<esc>
+
+function! OCamlType()
+  let col  = col('.')
+  let line = line('.')
+  let file = expand("%:p:r")
+  echo system("annot -n -type ".line." ".col." ".file.".annot")
+endfunction    
+map <leader>. :call OCamlType()<cr>
