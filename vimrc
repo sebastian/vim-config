@@ -168,8 +168,8 @@ set formatprg=par\ -rjeq
 " Toggle spell checking on and off with `,s`
 nmap <silent> <leader>s :set spell!<CR>
 " Set region to British English
-" set spelllang=en_gb
-set spelllang=es
+set spelllang=en_gb
+" set spelllang=es
 " Remember that I can use z= to get suggestions
 
 " Increase the default font size
@@ -209,3 +209,7 @@ function! OCamlType()
   echo system("annot -n -type ".line." ".col." ".file.".annot")
 endfunction    
 map <leader>. :call OCamlType()<cr>
+
+autocmd Syntax ocaml_lwt set commentstring=(*%s*)
+
+nnoremap <leader>b :w\|:!make<cr>
