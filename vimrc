@@ -153,11 +153,6 @@ imap jj <Esc>
 
 " Toggling between showing an hiding invisible characters
 nmap <leader>l :set list!<CR>
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-set listchars+=trail:·
-set listchars+=nbsp:—
-" set listchars+=,extends:#,precedes:#
 
 "Invisible character colors
 highlight NonText guifg=#A9A9A9
