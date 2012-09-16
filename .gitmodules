@@ -55,3 +55,6 @@
 [submodule "bundle/vim-ragtag"]
 	path = bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = git://github.com/tmhedberg/matchit.git

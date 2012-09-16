@@ -208,3 +208,4 @@ map <leader>. :call OCamlType()<cr>
 autocmd Syntax ocaml_lwt set commentstring=(*%s*)
 
 nnoremap <leader>b :w\|:!make<cr>
+nnoremap <leader>c :w\|:!script/test %<cr>
