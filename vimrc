@@ -57,8 +57,6 @@ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
-" nnoremap <CR> :noh<CR><CR>
-
 " The following are taken from the blog post of Steve Losh
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set modelines=0
@@ -94,14 +92,6 @@ nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -146,8 +136,6 @@ nmap <leader>l :set list!<CR>
 highlight NonText guifg=#A9A9A9
 highlight SpecialKey guifg=#A9A9A9
 
-" set formatprg=par\ -rjeq
-
 " Set region to British English
 set spelllang=en_gb
 " Remember that I can use z= to get suggestions
@@ -175,3 +163,43 @@ nnoremap <leader>aia I[[[<esc>A alloc] init] autorelease];<esc>
 
 autocmd FileType erl set commentstring=\%\ %s
 autocmd Syntax erlang set commentstring=\%\ %s
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Changes from http://statico.github.com/vim.html  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" For skipping between buffers
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+
+" Ctrl-P changes:
+" To use Ctrl-P in buffer mode
+nmap ; :CtrlPBuffer<CR>
+
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|beam|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+
+" Toggle visibility of tree
+nmap \e :NERDTreeToggle<CR>
+
+" Force the right number of colours, if the terminal supports it, but
+" vim doesn't realise
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
+endif
+
+" In order to adapt indents etc to work well
+" with other people's code
+nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+
+" Set wrapping
+nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
