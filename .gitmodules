@@ -73,3 +73,9 @@
 [submodule "bundle/VimClojure"]
 	path = bundle/VimClojure
 	url = git://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/vim-literate-coffeescript"]
+	path = bundle/vim-literate-coffeescript
+	url = https://github.com/mintplant/vim-literate-coffeescript.git
+[submodule "bundle/vim-protobuf-syntax"]
+	path = bundle/vim-protobuf-syntax
+	url = https://github.com/jdevera/vim-protobuf-syntax.git
