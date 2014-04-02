@@ -7,7 +7,7 @@ silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#pathogen#helptags()
 
 syntax enable                     " Turn on syntax highlighting.
-syntax on 
+syntax on
 filetype plugin indent on         " Turn on file type detection.
 
 set showcmd                       " Display incomplete commands.
@@ -107,6 +107,9 @@ nnoremap <leader>ft Vatzf
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
 
+  au BufNewFile,BufRead *.md setlocal tw=110
+  au BufNewFile,BufRead *.md setlocal spell
+
   au BufNewFile,BufRead *.txt setlocal tw=72
   au BufNewFile,BufRead *.txt setlocal spell
 
@@ -120,7 +123,7 @@ if !exists("autocommands_loaded")
 
   au BufNewFile,BufRead *.erl setlocal ts=2 sw=2
   au BufNewFile,BufRead *.erl setlocal spell
-  
+
   au BufNewFile,BufRead *.cpp setlocal ts=4 sw=4
   au BufNewFile,BufRead *.cpp setlocal spell
   au BufNewFile,BufRead *.c setlocal ts=4 sw=4
@@ -135,6 +138,10 @@ nmap <leader>l :set list!<CR>
 "Invisible character colors
 highlight NonText guifg=#A9A9A9
 highlight SpecialKey guifg=#A9A9A9
+
+" using Source Code Pro
+set anti enc=utf-8
+set guifont=Source\ Code\ Pro:h12
 
 " Set region to British English
 set spelllang=en_gb
