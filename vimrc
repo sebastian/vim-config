@@ -203,3 +203,17 @@ nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " Set wrapping
 nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
+
+" Function for deleting trailing white space.
+" Taken from Stackoverflow:
+" http://stackoverflow.com/questions/3474709/delete-all-spaces-and-tabs-at-the-end-of-my-lines
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+noremap <leader>w :call DeleteTrailingWS()<CR>
+
+" Delete trailing white space upon saving files
+autocmd BufWrite * :call DeleteTrailingWS()
