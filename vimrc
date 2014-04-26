@@ -151,11 +151,7 @@ set spelllang=en_gb
 nnoremap <leader>inl ^mq*``f=wv$hh"wy``dw"wPV=`qdd
 
 colorscheme solarized
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+set background=light
 
 " Changes for developing arduino projects
 autocmd Filetype arduino set errorformat^=\%-G%.%#/Applications/Arduino.app/%.%#
