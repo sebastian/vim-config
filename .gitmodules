@@ -79,3 +79,9 @@
 [submodule "bundle/vim-protobuf-syntax"]
 	path = bundle/vim-protobuf-syntax
 	url = https://github.com/jdevera/vim-protobuf-syntax.git
+[submodule "bundle/vim-pandoc"]
+	path = bundle/vim-pandoc
+	url = git@github.com:vim-pandoc/vim-pandoc.git
+[submodule "bundle/vimroom"]
+	path = bundle/vimroom
+	url = git@github.com:mikewest/vimroom.git
