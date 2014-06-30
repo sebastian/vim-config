@@ -31,9 +31,6 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/vim-git"]
 	path = bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
@@ -58,30 +55,12 @@
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/VimClojure"]
-	path = bundle/VimClojure
-	url = git://github.com/vim-scripts/VimClojure.git
-[submodule "bundle/vim-literate-coffeescript"]
-	path = bundle/vim-literate-coffeescript
-	url = https://github.com/mintplant/vim-literate-coffeescript.git
 [submodule "bundle/vim-protobuf-syntax"]
 	path = bundle/vim-protobuf-syntax
 	url = https://github.com/jdevera/vim-protobuf-syntax.git
-[submodule "bundle/vim-pandoc"]
-	path = bundle/vim-pandoc
-	url = git@github.com:vim-pandoc/vim-pandoc.git
-[submodule "bundle/vimroom"]
-	path = bundle/vimroom
-	url = git@github.com:mikewest/vimroom.git
