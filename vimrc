@@ -75,7 +75,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set textwidth=79
+set textwidth=120
 set formatoptions=qrn1
 set linebreak
 set nolist
@@ -160,12 +160,43 @@ autocmd Filetype arduino set errorformat^=\%-G%.%#/Applications/Arduino.app/%.%#
 " // vim:ft=arduino
 au! BufRead,BufNewFile *.ino setfiletype arduino
 
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
 " Objective-C key bindings
 " Alloc init autorelease
 nnoremap <leader>aia I[[[<esc>A alloc] init] autorelease];<esc>
 
 autocmd FileType erl set commentstring=\%\ %s
 autocmd Syntax erlang set commentstring=\%\ %s
+
+
+" Syntastic settings
+" https://github.com/scrooloose/syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Additional syntastic settings from
+" http://www.stephendiehl.com/posts/vim_haskell.html
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+let g:syntastic_auto_loc_list=1
+
+" Settings for better haskell development
+" using vim-hdevtools
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+
+" pointfree plugin
+" Hit gq in visual mode to rewrite a selection to
+" its pointfree equivalent
+autocmd BufEnter *.hs set formatprg=pointfree
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""

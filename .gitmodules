@@ -64,3 +64,9 @@
 [submodule "bundle/vim-protobuf-syntax"]
 	path = bundle/vim-protobuf-syntax
 	url = https://github.com/jdevera/vim-protobuf-syntax.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-hdevtools"]
+	path = bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools.git
