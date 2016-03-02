@@ -48,7 +48,7 @@ set expandtab                     " Use spaces instead of tabs
 set laststatus=2                  " Show the status line all the time
 
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Automatic fold settings for specific files. Uncomment to use.
 autocmd FileType ruby setlocal foldmethod=syntax shiftwidth=2 tabstop=2
@@ -98,11 +98,6 @@ nnoremap k gk
 " Save on lost focus
 au FocusLost * :wa
 
-nnoremap <leader>a :Ack
-
-" To fold tags (for html)
-nnoremap <leader>ft Vatzf
-
 " From David Evans
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
@@ -147,28 +142,15 @@ set guifont=Source\ Code\ Pro:h12
 set spelllang=en_gb
 " Remember that I can use z= to get suggestions
 
-" My own little refactoring mapping for inlining a varialbe
-nnoremap <leader>inl ^mq*``f=wv$hh"wy``dw"wPV=`qdd
-
 colorscheme solarized
 set background=light
 
-" Changes for developing arduino projects
-autocmd Filetype arduino set errorformat^=\%-G%.%#/Applications/Arduino.app/%.%#
-" modelines
-" Add the following to the bottom of arduino files
-" // vim:ft=arduino
-au! BufRead,BufNewFile *.ino setfiletype arduino
-
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
-
-" Objective-C key bindings
-" Alloc init autorelease
-nnoremap <leader>aia I[[[<esc>A alloc] init] autorelease];<esc>
 
 autocmd FileType erl set commentstring=\%\ %s
 autocmd Syntax erlang set commentstring=\%\ %s
-
+autocmd FileType ex set commentstring=# %s
+autocmd Syntax elixir set commentstring=# %s
 
 " Syntastic settings
 " https://github.com/scrooloose/syntastic
@@ -187,25 +169,10 @@ map <silent> <Leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 let g:syntastic_auto_loc_list=1
 
-" Settings for better haskell development
-" using vim-hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
-
-" pointfree plugin
-" Hit gq in visual mode to rewrite a selection to
-" its pointfree equivalent
-autocmd BufEnter *.hs set formatprg=pointfree
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Changes from http://statico.github.com/vim.html  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-
-" For skipping between buffers
-nmap <C-n> :bnext<CR>
-nmap <C-p> :bprev<CR>
 
 " Ctrl-P changes:
 " To use Ctrl-P in buffer mode
@@ -227,13 +194,6 @@ nmap \e :NERDTreeToggle<CR>
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
-
-" In order to adapt indents etc to work well
-" with other people's code
-nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " Set wrapping
 nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
