@@ -149,8 +149,8 @@ autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 autocmd FileType erl set commentstring=\%\ %s
 autocmd Syntax erlang set commentstring=\%\ %s
-autocmd FileType ex set commentstring=# %s
-autocmd Syntax elixir set commentstring=# %s
+autocmd FileType ex set commentstring=#\ %s
+autocmd Syntax elixir set commentstring=#\ %s
 
 " Syntastic settings
 " https://github.com/scrooloose/syntastic
