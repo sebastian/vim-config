@@ -1,0 +1,66 @@
+set hidden                        " Handle multiple buffers better.
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
+
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
+
+set wrap                          " Turn on line wrapping.
+set textwidth=120
+set linebreak
+set formatoptions=qrn1
+set nolist
+set scrolloff=3                   " Show 3 lines of context around the cursor.
+
+set visualbell                    " No beeping.
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set noswapfile                    " Don't use swap files, they are annoying!
+
+set tabstop=2                     " Global tab width.
+set softtabstop=2
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+
+let mapleader = ","
+set gdefault
+set showmatch
+nnoremap <leader><space> :noh<cr>
+
+" Save on lost focus
+au FocusLost * :wa
+
+imap jj <Esc>
+
+" using Source Code Pro
+set anti enc=utf-8
+set guifont=SourceCodePro+Powerline+Awesome\ Regular:h15
+
+" Force the right number of colours, if the terminal supports it, but
+" vim doesn't realise
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
+endif
+
+" Function for deleting trailing white space.
+" Taken from Stackoverflow:
+" http://stackoverflow.com/questions/3474709/delete-all-spaces-and-tabs-at-the-end-of-my-lines
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+" Delete trailing white space upon saving files
+autocmd BufWrite * :call DeleteTrailingWS()
+
+colorscheme flatlandia
+set background=dark
+
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar

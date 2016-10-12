@@ -1,0 +1,7 @@
+if has("gui_macvim") || has("gui_vimr")
+  autocmd VimEnter * set guioptions+=e
+endif
+let g:airline_powerline_fonts = 1
+set laststatus=2
+" Disable truncation
+let g:airline#extensions#default#section_truncate_width = {}
